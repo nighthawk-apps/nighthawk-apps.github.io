@@ -1,1 +1,36 @@
-# empty
+- key: Name
+  value: nighthawk apps
+- key: Description
+  value:
+    - build privacy-preserving software
+    - app free from surveillance
+    - privacy with ZKP, MPC & FHE
+  typed: true
+- key: projects
+  value:
+    - key: zcash_wallet
+      url: "https://nighthawkwallet.com"
+    - key: zcash_infra
+      url: "https://lightwalletd.com"
+    - key: zcash_explorer
+      url: "https://zcashblockexplorer.com"
+- key: Contact
+  value:
+    - key: email
+      value: email@nighthawkapps.com
+      url: "email@nighthawkapps.com"
+- key: source
+  value: github/nighthawkapps
+  url: https://github.com/nighthawk-apps
+- key: social
+  value:
+    - value: org
+      url: https://twitter.com/nighthawkapps
+    - value: zcash_wallet
+      url: https://x.com/NighthawkWallet
+    - value: zcash_infra
+      url: https://x.com/lightwalletd
+    - value: zcash_explorer
+      url: https://x.com/ZcashExplorer
+    - value: linkedin
+      url: https://linkedin.com/company/nighthawkapps
