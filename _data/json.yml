@@ -9,16 +9,19 @@
 - key: projects
   value:
     - key: zcash_wallet
-      url: "https://nighthawkwallet.com"
+      url: https://nighthawkwallet.com
+      value: zcash_wallet
     - key: zcash_infra
-      url: "https://lightwalletd.com"
+      url: https://lightwalletd.com
+      value: zcash_infra
     - key: zcash_explorer
-      url: "https://zcashblockexplorer.com"
+      url: https://zcashblockexplorer.com
+      value: zcash_explorer
 - key: Contact
   value:
     - key: email
       value: email@nighthawkapps.com
-      url: "email@nighthawkapps.com"
+      url: "mailto:email@nighthawkapps.com"
 - key: source
   value: github/nighthawkapps
   url: https://github.com/nighthawk-apps
