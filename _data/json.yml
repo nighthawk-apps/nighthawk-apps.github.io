@@ -2,8 +2,8 @@
   value: nighthawk apps
 - key: Description
   value:
-    - build privacy-preserving software
-    - app free from surveillance
+    - privacy-preserving software
+    - apps free from surveillance
     - privacy with ZKP, MPC & FHE
   typed: true
 - key: projects
