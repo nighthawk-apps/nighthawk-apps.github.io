@@ -6,17 +6,6 @@
     - apps free from surveillance
     - privacy with ZKP, MPC & FHE
   typed: true
-- key: projects
-  value:
-    - key: zcash_wallet
-      url: https://nighthawkwallet.com
-      value: zcash_wallet
-    - key: zcash_infra
-      url: https://lightwalletd.com
-      value: zcash_infra
-    - key: zcash_explorer
-      url: https://zcashblockexplorer.com
-      value: zcash_explorer
 - key: Contact
   value:
     - key: email
@@ -31,9 +20,5 @@
       url: https://twitter.com/nighthawkapps
     - value: zcash_wallet
       url: https://x.com/NighthawkWallet
-    - value: zcash_infra
-      url: https://x.com/lightwalletd
-    - value: zcash_explorer
-      url: https://x.com/ZcashExplorer
     - value: linkedin
       url: https://linkedin.com/company/nighthawkapps
