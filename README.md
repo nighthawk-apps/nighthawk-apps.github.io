@@ -6,8 +6,6 @@ The style is rebooted through [normalize.css](https://necolas.github.io/normaliz
 
 See the [demo](https://piazzai.github.io/hacked-jekyll) to check the end result.
 
-![](https://github.com/piazzai/hacked-jekyll/blob/master/screenshot.png)
-
 ## Installation
 
 The theme can be installed as usual by cloning this repository and editing the files. However, it is far more convenient to install it as a gem, in which case all the files you do not want or need to customize remain hidden from view, but will still be read and processed during build.
@@ -90,27 +88,36 @@ Finally, it is possible to render `value` as a hash, which is a list of key-valu
 
 You can customize the appearance of the rendered JSON object using site variables. These have default values that can be overridden by specifying a new value in your `_config.yml` file.
 
-| Variable       |       Default       | Purpose                                               |
-| -------------- | :-----------------: | ----------------------------------------------------- |
-| `lowercase`    |       `true`        | Set all keys and values to lowercase                  |
-| `color_bg`     | `var(--oc-gray-9)`  | Set the background color                              |
-| `color_punct`  | `var(--oc-green-9)` | Set the color of quote marks, commas, and parentheses |
-| `color_keyval` | `var(--oc-green-4)` | Set the color of all keys and values                  |
-| `color_hover`  | `var(--oc-green-5)` | Set the color of values on hover (if they are links)  |
-| `show_quotes`  |       `true`        | Display quote marks around keys and values            |
-| `show_commas`  |       `true`        | Display commas between key-value pairs                |
-| `target`       |       `_self`       | Set the target tab/window of hyperlinks               |
+| Variable      |  Default  | Purpose                                              |
+| ------------- | :-------: | ---------------------------------------------------- |
+| `color_bg`    | `gray-9`  | Set the background color                             |
+| `color_punct` | `green-9` | Set the color of quotes, commas, and brackets        |
+| `color_key`   | `green-4` | Set the color of keys                                |
+| `color_value` | `green-4` | Set the color of values                              |
+| `color_hover` | `green-5` | Set the color of values on hover (if they are links) |
+| `quotes`      |  `true`   | Display quote marks around keys and/or values        |
+| `commas`      |  `true`   | Display commas between key-value pairs               |
+| `lowercase`   |  `true`   | Transform all keys and/or values to lowercase        |
+| `newtab`      |  `false`  | Open links in a new tab                              |
 
-All color defaults use the naming convention of the Open Color library ([read here](https://yeun.github.io/open-color/documents.html)). You can change them to any other color in the library, any base CSS color, or any three or six-digit hex color. For example:
+The `color_*` variables follow the Open Color library's naming convention ([read here](https://yeun.github.io/open-color/documents.html)). You can change them to any color in the library using the same convention. For example:
 
 ```yaml
-color_bg: var(--oc-indigo-8)
-color_punct: black
-color_keyval: '#fff'
-color_hover: '#cc5de8'
+color_bg: indigo-5
+color_punct: teal-6
+color_key: grape-7
+color_value: lime-8
+color_hover: cyan-9
 ```
 
-If you use Open Color names, remember to wrap them in a CSS variable.
+The variables `quotes` and `lowercase` are true by default and can be set to false, but they can also be set to `keys` or `values` in order to restrict their effect to either keys or values. For example, the following code will display quote marks only around values and transform only keys to lowercase:
+
+```yaml
+quotes: values
+lowercase: keys
+```
+
+It is possible to customize the CSS by creating a file `_sass/_custom.scss`. You can use this to define new styles as well as overwrite the theme's defaults. The file will be automatically compiled during build.
 
 ## Bugs
 

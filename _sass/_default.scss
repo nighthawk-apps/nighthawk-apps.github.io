@@ -1,28 +1,25 @@
----
----
-
 @font-face {
   font-family: "hack";
-  src: url("../webfonts/hack-regular-subset.woff2") format("woff2");
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
-  text-rendering: optimizeLegibility;
+  src: url("../webfonts/hack-regular-subset.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "hack";
-  src: url("../webfonts/hack-italic-subset.woff2") format("woff2");
+  font-display: swap;
   font-style: italic;
   font-weight: 400;
-  text-rendering: optimizeLegibility;
+  src: url("../webfonts/hack-italic-subset.woff2") format("woff2");
 }
 
 body {
   font-family: "hack", monospace;
   font-size: 16px;
   font-weight: 400;
-  background-color: {{ site.color_bg }};
-  color: {{ site.color_punct }};
+  background-color: $color_bg;
+  color: $color_punct;
 }
 
 main {
@@ -59,7 +56,7 @@ a {
 
 a:hover,
 a:active {
-  color: {{ site.color_hover }};
+  color: $color_hover;
 }
 
 #json {
@@ -87,11 +84,13 @@ a:active {
   margin-left: 1.5rem;
 }
 
+.key {
+  color: $color_key;
+  text-transform: $transform_key;
+}
+
 .error,
-.key,
 .value {
-  {% if site.lowercase -%}
-  text-transform: lowercase;
-  {% endif -%}
-  color: {{ site.color_keyval }};
+  color: $color_value;
+  text-transform: $transform_value;
 }
