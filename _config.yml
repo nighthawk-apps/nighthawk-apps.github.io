@@ -1,17 +1,34 @@
 title: nighthawk apps
-description: ""
+description: "privacy-preserving software"
 baseurl: ""
 url: https://nighthawkapps.com
 
 lowercase: true
-color_bg: var(--oc-gray-9)
-color_punct: var(--oc-green-9)
-color_keyval: var(--oc-green-4)
-color_hover: var(--oc-green-5)
-show_quotes: true
-show_commas: true
+color_bg: gray-9
+color_punct: green-9
+color_key: green-4
+color_value: green-4
+color_hover: green-5
+quotes: true
+commas: true
 target: "_self"
+
+permalink: /blog/:title/
+
+exclude:
+  - LICENSE
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - demo/
+  - docs/
+  - hacked-jekyll.gemspec
+  - "*.gem"
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+sass:
+  sourcemap: never

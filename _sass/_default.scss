@@ -22,7 +22,7 @@ body {
   color: $color_punct;
 }
 
-main {
+main.home {
   position: absolute;
   width: 98%;
   top: 50%;
@@ -31,16 +31,32 @@ main {
 }
 
 @media (min-width: 576px) {
-  main {
+  main.home {
     font-size: 18px;
     width: 90%;
   }
 }
 
 @media (min-width: 768px) {
-  main {
+  main.home {
     font-size: 20px;
     width: 80%;
+  }
+}
+
+main.document {
+  font-size: 16px;
+}
+
+@media (min-width: 576px) {
+  main.document {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  main.document {
+    font-size: 18px;
   }
 }
 

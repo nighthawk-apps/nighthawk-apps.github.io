@@ -6,6 +6,9 @@
     - apps free from surveillance
     - privacy with ZKP, MPC & FHE
   typed: true
+- key: blog
+  value: nighthawkapps.com/blog
+  url: /blog/
 - key: Contact
   value:
     - key: email
@@ -17,7 +20,7 @@
 - key: social
   value:
     - value: org
-      url: https://twitter.com/nighthawkapps
+      url: https://x.com/nighthawkapps
     - value: nighthawkwallet
       url: https://x.com/NighthawkWallet
     - value: linkedin

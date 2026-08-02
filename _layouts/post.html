@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+{% case site.quotes -%}
+{% when 'keys' -%}
+{% assign quote_key = '"' -%}
+{% assign quote_value = '' -%}
+{% when 'values' -%}
+{% assign quote_key = '' -%}
+{% assign quote_value = '"' -%}
+{% when false -%}
+{% assign quote_key = '' -%}
+{% assign quote_value = '' -%}
+{% else -%}
+{% assign quote_key = '"' -%}
+{% assign quote_value = '"' -%}
+{% endcase -%}
+
+{% if site.commas == false -%}
+{% assign comma = '' -%}
+{% else -%}
+{% assign comma = ',' -%}
+{% endif -%}
+
+<nav class="crumb">
+  <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <span class="punct">/</span>
+  <a href="{{ '/blog/' | relative_url }}">blog</a>
+  <span class="punct">/</span>
+  <span class="here">{{ page.slug }}</span>
+</nav>
+
+<header class="post-meta">
+  <div class="my ms">
+    {{ quote_key }}<span class="key">title</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value">{{ page.title }}</span>{{ quote_value }}{{ comma }}
+  </div>
+  {% if page.subtitle %}
+  <div class="my ms">
+    {{ quote_key }}<span class="key">subtitle</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value">{{ page.subtitle }}</span>{{ quote_value }}{{ comma }}
+  </div>
+  {% endif %}
+  <div class="my ms">
+    {{ quote_key }}<span class="key">date</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value">{{ page.date | date: "%Y-%m-%d" }}</span>{{ quote_value }}{{ comma }}
+  </div>
+  <div class="my ms">
+    {{ quote_key }}<span class="key">type</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value">{{ page.post_type | default: 'article' }}</span>{{ quote_value }}
+  </div>
+</header>
+
+<article class="post-body">
+{{ content }}
+</article>
+
+<footer class="post-footer">
+  <a href="{{ '/blog/' | relative_url }}">← blog</a>
+</footer>

@@ -1,0 +1,113 @@
+/* Blog / document pages — scrollable, same terminal palette */
+
+body.blog main.document,
+body.post main.document {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: min(44rem, 92%);
+  margin: 2.5rem auto 4rem;
+  max-width: 44rem;
+}
+
+.crumb {
+  margin-bottom: 2rem;
+  white-space: normal;
+}
+
+.crumb a {
+  color: $color_value;
+}
+
+.crumb .punct {
+  color: $color_punct;
+  margin: 0 0.35rem;
+}
+
+.crumb .here {
+  color: $color_key;
+  text-transform: $transform_key;
+}
+
+.blog-index {
+  white-space: normal;
+}
+
+.blog-index .post-entry {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  margin-bottom: 2rem;
+  white-space: normal;
+}
+
+.post-body {
+  color: $color_value;
+  text-transform: none;
+  line-height: 1.65;
+  white-space: normal;
+}
+
+.post-body h2,
+.post-body h3 {
+  color: $color_key;
+  text-transform: $transform_key;
+  font-size: 1.05em;
+  font-weight: 400;
+  margin: 2rem 0 0.75rem;
+}
+
+.post-body p {
+  margin: 0 0 1rem;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.post-body li {
+  margin-bottom: 0.5rem;
+}
+
+.post-body strong {
+  color: $color_key;
+  font-weight: 400;
+}
+
+.post-body a {
+  color: $color_value;
+}
+
+.post-body a:hover,
+.post-body a:active {
+  color: $color_hover;
+}
+
+.post-body hr {
+  border: 0;
+  border-top: 1px solid $color_punct;
+  margin: 2rem 0;
+  opacity: 0.4;
+}
+
+.post-body blockquote {
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid $color_punct;
+  color: $color_punct;
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $color_punct;
+}
+
+.post-footer a {
+  color: $color_value;
+}

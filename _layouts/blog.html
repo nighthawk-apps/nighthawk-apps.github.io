@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+{% case site.quotes -%}
+{% when 'keys' -%}
+{% assign quote_key = '"' -%}
+{% assign quote_value = '' -%}
+{% when 'values' -%}
+{% assign quote_key = '' -%}
+{% assign quote_value = '"' -%}
+{% when false -%}
+{% assign quote_key = '' -%}
+{% assign quote_value = '' -%}
+{% else -%}
+{% assign quote_key = '"' -%}
+{% assign quote_value = '"' -%}
+{% endcase -%}
+
+{% if site.commas == false -%}
+{% assign comma = '' -%}
+{% else -%}
+{% assign comma = ',' -%}
+{% endif -%}
+
+<nav class="crumb">
+  <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <span class="punct">/</span>
+  <span class="here">blog</span>
+</nav>
+
+<div id="json" class="blog-index">
+  <div class="my ms">
+    {{ quote_key }}<span class="key">title</span>{{ quote_key }}:
+    {{ quote_value }}<span class="value">{{ page.title | default: 'blog' }}</span>{{ quote_value }}{{ comma }}
+  </div>
+  <div class="my ms">
+    {{ quote_key }}<span class="key">posts</span>{{ quote_key }}: [
+    {% assign posts = site.posts %}
+    {% if posts.size == 0 %}
+    <p class="ms">
+      {{ quote_value }}<span class="value">no posts yet</span>{{ quote_value }}
+    </p>
+    {% else %}
+    {% for post in posts %}
+    <div class="ms post-entry">
+      {
+      <p class="ms">
+        {{ quote_key }}<span class="key">date</span>{{ quote_key }}:
+        {{ quote_value }}<span class="value">{{ post.date | date: "%Y-%m-%d" }}</span>{{ quote_value }}{{ comma }}
+      </p>
+      <p class="ms">
+        {{ quote_key }}<span class="key">title</span>{{ quote_key }}:
+        {{ quote_value }}<a class="value" href="{{ post.url | relative_url }}">{{ post.title }}</a>{{ quote_value }}
+        {%- if post.subtitle -%}{{ comma }}{%- endif %}
+      </p>
+      {% if post.subtitle %}
+      <p class="ms">
+        {{ quote_key }}<span class="key">subtitle</span>{{ quote_key }}:
+        {{ quote_value }}<span class="value">{{ post.subtitle }}</span>{{ quote_value }}
+      </p>
+      {% endif %}
+      }{%- unless forloop.last -%}{{ comma }}{%- endunless %}
+    </div>
+    {% endfor %}
+    {% endif %}
+    ]
+  </div>
+</div>
+
+{{ content }}

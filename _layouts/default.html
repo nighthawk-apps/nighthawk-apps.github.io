@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 {% seo title=false %}
   <link rel="icon" type="image/x-icon" href="{{ 'assets/favicon.ico' | relative_url }}" />
@@ -19,21 +19,23 @@
   <script src="{{ 'assets/js/typed.umd.js' | relative_url }}"></script>
 </head>
 
-<body>
-  <main>
+<body class="{{ page.layout }}">
+  <main class="{% if page.layout == 'home' %}home{% else %}document{% endif %}">
 
 {{ content }}
 
   </main>
   <script>
-    var typed = new Typed("#typed", {
-      stringsElement: "#strings",
-      backSpeed: 10,
-      typeSpeed: 30,
-      backDelay: 1000,
-      loop: true,
-      smartBackspace: true,
-    });
+    if (document.getElementById("typed") && document.getElementById("strings")) {
+      new Typed("#typed", {
+        stringsElement: "#strings",
+        backSpeed: 10,
+        typeSpeed: 30,
+        backDelay: 1000,
+        loop: true,
+        smartBackspace: true,
+      });
+    }
   </script>
 </body>
 
